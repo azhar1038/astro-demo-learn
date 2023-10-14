@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import { getCollection } from "astro:content";
 
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection("blog");
 const pageTitle: string = "My Astro Learning Blog";
 ---
 
@@ -13,7 +13,7 @@ const pageTitle: string = "My Astro Learning Blog";
     {
       allPosts.map((post) => (
         <BlogPost
-          url={`/astro-demo-learn/posts/${post.slug}`}
+          url={`/astro-demo-learn/blog/${post.slug}`}
           title={post.data.title}
         />
       ))
